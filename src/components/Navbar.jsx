@@ -1,8 +1,8 @@
 import logoImg from '../../assets/logo.png'
-import { NavLink } from 'react-router';
 import { RiHome2Line } from 'react-icons/ri';
 import { GoGraph } from 'react-icons/go';
 import { LuClock3 } from 'react-icons/lu';
+import MyNavLink from '../UI/MyNavLink';
 
 const Navbar = () => {
     return (
@@ -11,20 +11,21 @@ const Navbar = () => {
                 <img src={logoImg} alt="" />
 
                 <div className='flex items-center gap-1'>
-                    <NavLink to={'/'} className={({ isActive }) => `btn btn-ghost text-[#64748B] font-medium px-4 py-3 rounded-lg ${isActive && ' bg-[#244D3F] text-white font-bold'}`}>
+
+                    <MyNavLink to={'/'}>
                         <RiHome2Line />
                         <span>Home</span>
-                    </NavLink>
+                    </MyNavLink>
 
-                    <NavLink to={'/timeline'} className={({ isActive }) => `btn btn-ghost text-[#64748B] font-medium px-4 py-3 rounded-lg ${isActive && ' bg-[#244D3F] text-white font-bold'}`}>
+                    <MyNavLink to={'/timeline'}>
                         <LuClock3 />
                         <span>Timeline</span>
-                    </NavLink>
+                    </MyNavLink>
 
-                    <NavLink to={'/stats'} className={({ isActive }) => `btn btn-ghost text-[#64748B] font-medium px-4 py-3 rounded-lg ${isActive && ' bg-[#244D3F] text-white font-bold'}`}>
+                    <MyNavLink to={'/stats'}>
                         <GoGraph />
                         <span>Stats</span>
-                    </NavLink>
+                    </MyNavLink>
                 </div>
             </div>
         </nav>
