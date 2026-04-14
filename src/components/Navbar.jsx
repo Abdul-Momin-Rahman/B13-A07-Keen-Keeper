@@ -16,17 +16,17 @@ const Navbar = () => {
 
                 <div className=' items-center gap-1 hidden sm:flex'>
 
-                    <MyNavLink to={'/'}>
+                    <MyNavLink onClick={()=> window.scrollTo(0, 0)} to={'/'}>
                         <RiHome2Line />
                         <span>Home</span>
                     </MyNavLink>
 
-                    <MyNavLink to={'/timeline'}>
+                    <MyNavLink onClick={()=> window.scrollTo(0, 0)} to={'/timeline'}>
                         <LuClock3 />
                         <span>Timeline</span>
                     </MyNavLink>
 
-                    <MyNavLink to={'/stats'}>
+                    <MyNavLink onClick={()=> window.scrollTo(0, 0)} to={'/stats'}>
                         <GoGraph />
                         <span>Stats</span>
                     </MyNavLink>

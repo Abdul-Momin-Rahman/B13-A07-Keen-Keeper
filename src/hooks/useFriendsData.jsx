@@ -1,24 +1,31 @@
 import { useEffect, useState } from "react";
 
+let cachedFriends = null;
+
 const useFriendsData = () => {
 
 
-    const [friends, setFriends] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [friends, setFriends] = useState(cachedFriends || []);
+    const [loading, setLoading] = useState(!cachedFriends);
 
     useEffect(() => {
 
-        const fetchData = async () => {
-            const response = await fetch('/friends.json');
-            const data = await response.json();
-
-            setTimeout(() => {
-                setFriends(data);
-                setLoading(false);
-            }, 1500)
+        if(!cachedFriends){
+            
+            const fetchData = async () => {
+                const response = await fetch('/friends.json');
+                const data = await response.json();
+    
+                setTimeout(() => {
+                    cachedFriends = data;
+                    setFriends(data);
+                    setLoading(false);
+                }, 2000)
+            }
+    
+            fetchData();
         }
-
-        fetchData();
+        
     }, [])
 
     return {friends, loading}
