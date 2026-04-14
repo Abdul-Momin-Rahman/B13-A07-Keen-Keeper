@@ -5,7 +5,10 @@
 
 # A short description
     
-    KeenKeeper is a platform where you can manage your conncetions by browsing , tending and nurting the realtionships that matter to you the most.
+    A simple personal space to track and nurture meaningful friendships. 
+    Stay connected with the people who matter most through gentle reminders, 
+    organized profiles, and clear insights into your relationships.
+
 
 # Technologies used
 
