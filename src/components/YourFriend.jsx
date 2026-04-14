@@ -7,8 +7,9 @@ const YourFriend = () => {
 
     const { friends, loading } = useFriendsData();
 
-    if (loading) return <div className="min-h-[70vh] flex justify-center items-center">
+    if (loading) return <div className="h-[50vh] flex justify-center items-center gap-20 bg-[#F8FAFC]">
         <DotLoader color="#244D3F" />
+        <span className="text-2xl font-semibold text-[#244D3F]">Loading Please Wait....</span>
     </div>
 
 

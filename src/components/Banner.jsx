@@ -1,9 +1,32 @@
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 import SummaryCard from '../UI/SummaryCard';
+import useFriendsData from '../hooks/useFriendsData';
+import { ClipLoader } from 'react-spinners';
 
 
 const Banner = () => {
+
+    const { friends, loading } = useFriendsData();
+
+    const total = friends.length;
+    let onTrack = 0; 
+    let needAttention = 0; 
+    let interactions = 0; 
+
+    for(const obj of friends) {
+        if(obj.status === 'On-Track') {
+            onTrack += 1;
+        }
+        else if(obj.status === 'Overdue') {
+            needAttention += 1;
+        }
+
+        if(obj.days_since_contact <= 7) {
+            interactions += 1;
+        }
+    }
+
     return (
         <div className='bg-[#F8FAFC] pt-20 pb-10'>
             <div className=' pb-10 flex flex-col gap-8 text-center '>
@@ -21,10 +44,10 @@ const Banner = () => {
 
             <div className=' w-fit mx-auto'>
                 <div className='grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3 items-stretch auto-rows-fr'>
-                    <SummaryCard paraText={"Total Friends"} headText={"10"}></SummaryCard>
-                    <SummaryCard paraText={"On Track"} headText={"3"}></SummaryCard>
-                    <SummaryCard paraText={"Need Attention"} headText={"6"}></SummaryCard>
-                    <SummaryCard paraText={"Interactions This Month"} headText={"12"}></SummaryCard>
+                    <SummaryCard paraText={"Total Friends"} headText={loading? <ClipLoader color="#244D3F" /> :total}></SummaryCard>
+                    <SummaryCard paraText={"On Track"} headText={loading? <ClipLoader color="#244D3F" /> :onTrack}></SummaryCard>
+                    <SummaryCard paraText={"Need Attention"} headText={loading? <ClipLoader color="#244D3F" /> :needAttention}></SummaryCard>
+                    <SummaryCard paraText={"Interactions This Week"} headText={loading? <ClipLoader color="#244D3F" /> :interactions}></SummaryCard>
                 </div>
 
                 <div className='mt-10 border text-[#E9E9E9]'></div>
