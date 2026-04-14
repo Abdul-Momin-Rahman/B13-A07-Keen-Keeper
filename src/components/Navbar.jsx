@@ -7,7 +7,7 @@ import MobileDropdown from '../UI/MobileDropdown';
 
 const Navbar = () => {
     return (
-        <nav className='shadow-sm px-2 sticky top-0 bg-base-100'>
+        <nav className='shadow-sm px-2 sticky top-0 bg-base-100 z-10'>
             <div className='flex justify-between items-center py-4 container mx-auto'>
                 <img src={logoImg} alt="" />
 

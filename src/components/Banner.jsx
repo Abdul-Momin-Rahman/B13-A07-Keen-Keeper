@@ -5,7 +5,7 @@ import SummaryCard from '../UI/SummaryCard';
 
 const Banner = () => {
     return (
-        <div className='bg-[#F8FAFC] py-20'>
+        <div className='bg-[#F8FAFC] pt-20 pb-10'>
             <div className=' pb-10 flex flex-col gap-8 text-center '>
                 <div className='w-fit mx-auto flex flex-col gap-4'>
                     <h1 className='text-[#1F2937] font-bold text-5xl px-2'>Friends to keep close in your life</h1>
@@ -27,7 +27,7 @@ const Banner = () => {
                     <SummaryCard paraText={"Interactions This Month"} headText={"12"}></SummaryCard>
                 </div>
 
-                <div className='my-10 border text-[#E9E9E9]'></div>
+                <div className='mt-10 border text-[#E9E9E9]'></div>
             </div>
 
 
