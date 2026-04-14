@@ -1,4 +1,4 @@
-# Name of your project
+# Name of the project
 
     The name of my Project is KeenKeeper. 
     This is the 7th assignment of Programming hero Level 1 batch 13.
@@ -7,7 +7,7 @@
     
     KeenKeeper is a platform where you can manage your conncetions by browsing , tending and nurting the realtionships that matter to you the most.
 
-# Technologies you used
+# Technologies used
 
     I have used following technologies to create this project : 
 
@@ -16,7 +16,7 @@
         3.Tailwind CSS & DaisyUI for styling and responsiveness.
         4.Recharts for showing chart.
 
-# 3 key features of your project
+# 3 key features of the project
 
     1. Friend Tracking – Keep all important friends in one place with last contact and status.
 
