@@ -6,6 +6,14 @@ import SummaryCard from '../UI/SummaryCard';
 import { LuPhoneCall } from 'react-icons/lu';
 import { MdOutlineTextsms } from 'react-icons/md';
 import { FiVideo } from 'react-icons/fi';
+import { useContext } from 'react';
+import { TimelineContext } from '../Context/TimelineContext';
+import UseCurrentDate from '../hooks/useCurrentDate';
+import callIcon from '../../assets/call.png';
+import textIcon from '../../assets/text.png';
+import videoIcon from '../../assets/video.png';
+import { toast, Zoom } from 'react-toastify';
+
 
 const FriendDetails = () => {
 
@@ -13,8 +21,39 @@ const FriendDetails = () => {
 
     const { friends, loading } = useFriendsData();
 
-    if (loading) return <div className='text-center h-[70vh] flex flex-col items-center justify-center gap-5 bg-[#F8FAFC]'>
-        <div className="flex w-52 flex-col gap-4">
+    const { timeline, SetTimeline } = useContext(TimelineContext);
+
+
+    const handleCheckIn = (typeOfCheckIn) => {
+
+        const date = UseCurrentDate();
+
+        const checkInObj = {
+            typeOfCheckIn,
+            name,
+            date,
+            icon: typeOfCheckIn === 'Call' ? callIcon : typeOfCheckIn === 'Text' ? textIcon : videoIcon
+        }
+
+        SetTimeline([...timeline, checkInObj]);
+
+        toast(`${typeOfCheckIn}ing ${name}`, 
+        
+            {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Zoom,
+        });
+    }
+
+    if (loading) return <div className='text-center h-[70vh] flex flex-col items-center justify-center gap-10 bg-[#F8FAFC]'>
+        <div className="flex w-75 flex-col gap-4">
             <div className="skeleton h-32 w-full"></div>
             <div className="skeleton h-4 w-28"></div>
             <div className="skeleton h-4 w-full"></div>
@@ -23,6 +62,7 @@ const FriendDetails = () => {
 
         <p className='text-3xl text-[#1F2937] font-semibold'>Loading Please Wait...</p>
     </div>
+
 
     const expectedFriend = friends.find((friend) => friend.id === Number(id))
 
@@ -103,15 +143,21 @@ const FriendDetails = () => {
                         <p className='text-[#244D3F] font-medium text-xl text-center sm:text-left'>Quick Check-In</p>
 
                         <div className='flex  gap-6 justify-between'>
-                            <button className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F'>
+                            <button
+                                onClick={() => handleCheckIn('Call')}
+                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F'>
                                 <h1 className='text-[#244D3F] font-semibold text-[32px]'><LuPhoneCall /></h1>
                                 <p className='text-[#1F2937] text-lg font-normal'>Call</p>
                             </button>
-                            <button className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F '>
+                            <button
+                                onClick={() => handleCheckIn('Text')}
+                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F '>
                                 <h1 className='text-[#244D3F] font-semibold text-[32px]'><MdOutlineTextsms /></h1>
                                 <p className='text-[#1F2937] text-lg font-normal'>Text</p>
                             </button>
-                            <button className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F'>
+                            <button
+                                onClick={() => handleCheckIn('Video')}
+                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F'>
                                 <h1 className='text-[#244D3F] font-semibold text-[32px]'><FiVideo /></h1>
                                 <p className='text-[#1F2937] text-lg font-normal'>Video</p>
                             </button>
