@@ -1,16 +1,25 @@
-# React + Vite
+# Name of your project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    The name of my Project is KeenKeeper. 
+    This is the 7th assignment of Programming hero Level 1 batch 13.
 
-Currently, two official plugins are available:
+# A short description
+    
+    KeenKeeper is a platform where you can manage your conncetions by browsing , tending and nurting the realtionships that matter to you the most.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Technologies you used
 
-## React Compiler
+    I have used following technologies to create this project : 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+        1.React.js to build the UI.
+        2.React Router DOM for handling page navigation.
+        3.Tailwind CSS & DaisyUI for styling and responsiveness.
+        4.Recharts for showing chart.
 
-## Expanding the ESLint configuration
+# 3 key features of your project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    1. Friend Tracking – Keep all important friends in one place with last contact and status.
+
+    2. Smart Reminders – Get alerts when it’s time to reconnect.
+
+    3. Connection Insights – See who you’re close with and who needs attention.
