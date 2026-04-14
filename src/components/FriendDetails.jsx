@@ -33,7 +33,7 @@ const FriendDetails = () => {
     return (
 
         <div className=' bg-[#F8FAFC] py-20'>
-            <div className='lg:w-9/12 md:container mx-auto flex flex-col lg:flex-row justify-between gap-6'>
+            <div className='container mx-auto flex flex-col lg:flex-row justify-between gap-6'>
 
                 <div className='lg:w-[30%] space-y-4 flex flex-col'>
                     {/* Left */}
