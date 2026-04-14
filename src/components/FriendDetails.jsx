@@ -8,7 +8,7 @@ import { MdOutlineTextsms } from 'react-icons/md';
 import { FiVideo } from 'react-icons/fi';
 import { useContext } from 'react';
 import { TimelineContext } from '../Context/TimelineContext';
-import UseCurrentDate from '../hooks/useCurrentDate';
+import UseCurrentDate from '../hooks/UseCurrentDate';
 import callIcon from '../../assets/call.png';
 import textIcon from '../../assets/text.png';
 import videoIcon from '../../assets/video.png';
