@@ -3,6 +3,7 @@ import RootLayout from "../Layout/RootLayout";
 import Home from "../components/Home";
 import Timeline from "../components/Timeline";
 import Stats from "../components/Stats";
+import FriendDetails from "../components/FriendDetails";
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
             {
                 index : true,
                 element : <Home/>
+            },
+            {
+                path : '/:id',
+                element : <FriendDetails/>
             },
             {
                 path : 'timeline',
