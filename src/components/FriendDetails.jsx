@@ -23,10 +23,10 @@ const FriendDetails = () => {
 
     const { timeline, SetTimeline } = useContext(TimelineContext);
 
+    const date = UseCurrentDate();
 
     const handleCheckIn = (typeOfCheckIn) => {
 
-        const date = UseCurrentDate();
 
         const checkInObj = {
             typeOfCheckIn,
@@ -37,11 +37,11 @@ const FriendDetails = () => {
 
         SetTimeline([...timeline, checkInObj]);
 
-        toast(`${typeOfCheckIn}ing ${name}`, 
+        toast(`Starting ${typeOfCheckIn} with ${name}`, 
         
             {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: false,

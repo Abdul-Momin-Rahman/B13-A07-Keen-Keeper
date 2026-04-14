@@ -39,22 +39,22 @@ const Timeline = () => {
                             </div> 
 
                             : status === "" ?
-                                timeline.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                                [...timeline].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
 
                                 :status === "Call" ?
                                     callInteraction.length === 0 ?
                                         <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Calls.</h2> 
-                                            :callInteraction.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                                            :[...callInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
 
                                 :status === "Text" ? 
                                     textInteraction.length === 0 ?
                                         <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Texts</h2> 
-                                            :textInteraction.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                                            :[...textInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
 
                                 :status === "Video" ?
                                     videoInteraction.length === 0 ?
                                         <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Video</h2>
-                                            : videoInteraction.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
+                                            : [...videoInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
                                 : null
 
                                        

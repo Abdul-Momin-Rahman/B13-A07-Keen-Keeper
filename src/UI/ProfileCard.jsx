@@ -8,7 +8,7 @@ const ProfileCard = ({ friend }) => {
     const bgColor = (status === 'On-Track' ? 'bg-[#244D3F]' : status === 'Overdue' ?  'bg-[#EF4444]' : 'bg-[#EFAD44]')
 
     return (
-        <Link to={`/${id}`} className='p-6 rounded-xl shadow-lg bg-white flex flex-col items-center justify-center gap-3 text-center min-w-55 w-full mx-auto 
+        <Link to={`/friend/${id}`} className='p-6 rounded-xl shadow-lg bg-white flex flex-col items-center justify-center gap-3 text-center min-w-55 w-full mx-auto 
         hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 hover:shadow-[#244D3F]
         '>
 
