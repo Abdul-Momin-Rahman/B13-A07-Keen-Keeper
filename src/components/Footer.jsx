@@ -8,8 +8,8 @@ const Footer = () => {
         <footer className='bg-[#244D3F] pt-20 pb-7.5 flex flex-col gap-10'>
             <div className='flex flex-col gap-6'>
                 <div className='flex flex-col items-center gap-4 w-fit mx-auto'>
-                    <img src={footerImg} alt="footerImg" className='w-80 sm:w-105' />
-                    <p className='text-white/80  font-normal text-base text-center mx-15'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+                    <img src={footerImg} alt="footerImg" className='w-60 sm:w-80 md:w-105' />
+                    <p className='text-white/80  font-normal text-base text-center px-2'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                 </div>
 
                 <div className='flex flex-col w-fit text-center gap-4 mx-auto'>
@@ -25,7 +25,7 @@ const Footer = () => {
 
             <div className='border-t border-[#1A8862]/20 flex flex-col-reverse gap-5 sm:gap-15 sm:flex-row sm:w-9/12 justify-between mx-auto pt-7.5'>
                 <div className='text-base font-normal text-[#FAFAFA]/50 text-center'>© 2026 KeenKeeper. All rights reserved.</div>
-                <div className='flex justify-between gap-5 lg:gap-15'>
+                <div className='flex justify-evenly gap-5 lg:gap-15 flex-wrap'>
                     <p className='text-base font-normal text-[#FAFAFA]/50 hover:text-white hover:underline transition duration-200 cursor-pointer'>Privacy Policy</p>
                     <p className='text-base font-normal text-[#FAFAFA]/50 hover:text-white hover:underline transition duration-200 cursor-pointer'>Terms of Service</p>
                     <p className='text-base font-normal text-[#FAFAFA]/50 hover:text-white hover:underline transition duration-200 cursor-pointer'>Cookies</p>

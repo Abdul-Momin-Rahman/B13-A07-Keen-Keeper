@@ -15,7 +15,7 @@ const Timeline = () => {
 
     return (
         <div className='bg-[#F8FAFC] py-20'>
-            <div className=' sm:w-7/12 px-10 sm:px-0  mx-auto'>
+            <div className=' sm:w-7/12 px-2 sm:px-0  mx-auto'>
                 <h1 className='text-[#1F2937] text-5xl font-bold text-center sm:text-left'>Timeline</h1>
 
                 <div className='py-6 '>
@@ -34,7 +34,7 @@ const Timeline = () => {
                 <div className='space-y-6 min-h-40'>
                     {
                         timeline.length === 0 ?
-                            <div className='text-5xl text-[#1F2937] font-bold text-center h-[50vh] flex flex-col gap-5 items-center justify-center'>
+                            <div className='text-2xl sm:text-5xl text-[#1F2937] font-bold text-center h-[50vh] flex flex-col gap-5 items-center justify-center'>
                                 <FaRegSadCry /> Your Timeline is empty
                             </div> 
 

@@ -42,13 +42,14 @@ const FriendDetails = () => {
             {
             position: "top-center",
             autoClose: 2000,
-            hideProgressBar: true,
+            hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
             progress: undefined,
             theme: "light",
             transition: Zoom,
+            icon : typeOfCheckIn === 'Call' ? <LuPhoneCall/> : typeOfCheckIn ==='Text' ? <MdOutlineTextsms/> : <FiVideo/> 
         });
     }
 
@@ -72,21 +73,21 @@ const FriendDetails = () => {
 
     return (
 
-        <div className=' bg-[#F8FAFC] py-20'>
-            <div className='container mx-auto flex flex-col lg:flex-row justify-between gap-6'>
+        <div className=' bg-[#F8FAFC] py-5 sm:py-20'>
+            <div className='container max-w-7xl px-3 md:px-8 mx-auto flex flex-col lg:flex-row justify-between gap-6'>
 
-                <div className='lg:w-[30%] space-y-4 flex flex-col'>
+                <div className='lg:w-1/3 space-y-4 flex flex-col'>
                     {/* Left */}
-                    <div className='p-6 rounded-xl shadow-lg bg-white flex flex-col items-center justify-center gap-3 text-center  w-full mx-auto '>
+                    <div className='p-3 sm:p-6 rounded-xl shadow-lg bg-white flex flex-col items-center justify-center gap-3 text-center  w-full mx-auto '>
 
                         <img src={picture} alt={name} className='rounded-full ' />
 
                         <div className='flex flex-col gap-2'>
 
-                            <h2 className='text-[#1F2937] font-semibold text-4xl sm:text-xl'>{name}</h2>
+                            <h2 className='text-[#1F2937] font-semibold text-3xl lg:text-xl'>{name}</h2>
 
                             <div className='flex gap-2 items-center justify-center'>
-                                {tags.map((tag, i) => <p className='text-[#244D3F] sm:text-xs font-medium bg-[#CBFADB] p-2 rounded-2xl' key={i}>{tag}</p>)}
+                                {tags.map((tag, i) => <p className='text-[#244D3F] lg:text-xs font-medium bg-[#CBFADB] p-2 rounded-2xl' key={i}>{tag}</p>)}
                             </div>
 
                             <div className={`${bgColor} p-2 rounded-2xl text-white w-fit mx-auto sm:text-xs font-medium`}>
@@ -99,19 +100,19 @@ const FriendDetails = () => {
                         </div>
                     </div>
 
-                    <div className='space-y-2'>
+                    <div className='space-y-2 flex lg:flex-col flex-wrap gap-x-3'>
 
-                        <div className='p-4 flex gap-2 justify-center items-center bg-white rounded-xl shadow-lg hover:scale-102 cursor-pointer'>
+                        <div className='p-4 flex gap-2 justify-center items-center bg-white rounded-xl shadow-lg hover:scale-102 cursor-pointer w-fit lg:w-full min-w-65 flex-1'>
                             <RiNotificationSnoozeLine />
                             <p className='font-medium text-base text-[#1F2937]'>Snooze 2 weeks</p>
                         </div>
 
-                        <div className='p-4 flex gap-2 justify-center items-center bg-white rounded-xl shadow-lg hover:scale-102 cursor-pointer'>
+                        <div className='p-4 flex gap-2 justify-center items-center bg-white rounded-xl shadow-lg hover:scale-102 cursor-pointer w-fit lg:w-full min-w-65 flex-1'>
                             <HiOutlineArchiveBox />
                             <p className='font-medium text-base text-[#1F2937]'>Archive</p>
                         </div>
 
-                        <div className='p-4 flex gap-2 justify-center items-center text-[#EF4444] bg-white rounded-xl shadow-lg hover:scale-102 cursor-pointer'>
+                        <div className='p-4 flex gap-2 justify-center items-center text-[#EF4444] bg-white rounded-xl shadow-lg hover:scale-102 cursor-pointer lg:w-full min-w-65 w-fit flex-1'>
                             <RiDeleteBinLine />
                             <p className='font-medium text-base '>Delete</p>
                         </div>
@@ -121,10 +122,10 @@ const FriendDetails = () => {
 
 
 
-                <div className='lg:w-[65%] space-y-6'>
+                <div className='lg:w-2/3 gap-6 flex flex-col-reverse lg:flex-col'>
                     {/* right */}
 
-                    <div className='stats-cards flex flex-col lg:flex-row justify-center  gap-6'>
+                    <div className='stats-cards flex flex-col md:flex-row justify-center  gap-6'>
                         <SummaryCard headText={days_since_contact} paraText={'Days Since Contact'} ></SummaryCard>
                         <SummaryCard headText={goal} paraText={'Goal (Days)'} ></SummaryCard>
                         <SummaryCard headText={next_due_date} paraText={'Next Due'} ></SummaryCard>
@@ -136,28 +137,28 @@ const FriendDetails = () => {
                             <button className='btn btn-md'>Edit</button>
                         </div>
 
-                        <p className='text-[#64748B] font-normal text-lg text-center sm:text-left sm:w-fit '>Connect every <span className='text-[#1F2937] font-bold'>{goal} days</span></p>
+                        <p className='text-[#64748B] font-normal text-lg  sm:w-fit '>Connect every <span className='text-[#1F2937] font-bold'>{goal} days</span></p>
                     </div>
 
                     <div className='quick-card px-6 py-6 rounded-xl shadow-lg bg-white flex flex-col justify-between gap-4'>
                         <p className='text-[#244D3F] font-medium text-xl text-center sm:text-left'>Quick Check-In</p>
 
-                        <div className='flex  gap-6 justify-between'>
+                        <div className='flex  sm:flex-row  gap-6 justify-between flex-wrap'>
                             <button
                                 onClick={() => handleCheckIn('Call')}
-                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F'>
+                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex md:flex-col justify-center gap-4 md:gap-2 items-center text-center  w-fit cursor-pointer  hover:border border-[#244D3F flex-1'>
                                 <h1 className='text-[#244D3F] font-semibold text-[32px]'><LuPhoneCall /></h1>
                                 <p className='text-[#1F2937] text-lg font-normal'>Call</p>
                             </button>
                             <button
                                 onClick={() => handleCheckIn('Text')}
-                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F '>
+                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex md:flex-col justify-center gap-4 md:gap-2 items-center text-center w-fit cursor-pointer  hover:border border-[#244D3F flex-1 '>
                                 <h1 className='text-[#244D3F] font-semibold text-[32px]'><MdOutlineTextsms /></h1>
                                 <p className='text-[#1F2937] text-lg font-normal'>Text</p>
                             </button>
                             <button
                                 onClick={() => handleCheckIn('Video')}
-                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex flex-col gap-2 items-center text-center w-full cursor-pointer  hover:border border-[#244D3F'>
+                                className='p-8 bg-[#F8FAFC] shadow-lg rounded-lg flex md:flex-col justify-center gap-4 md:gap-2 items-center text-center w-fit cursor-pointer  hover:border border-[#244D3F flex-1'>
                                 <h1 className='text-[#244D3F] font-semibold text-[32px]'><FiVideo /></h1>
                                 <p className='text-[#1F2937] text-lg font-normal'>Video</p>
                             </button>

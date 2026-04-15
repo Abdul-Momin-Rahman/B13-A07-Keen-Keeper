@@ -4,7 +4,7 @@ const TimelineCard = ({time}) => {
 
     // console.log(time)
     return (
-        <div className='p-4 w-full bg-white rounded-xl shadow-lg flex gap-4 items-center'>
+        <div className='px-1 py-4 lg:px-4 w-full bg-white rounded-xl shadow-lg flex gap-4 items-center'>
             <div><img src={time.icon} alt="" className='w-10 h-10' /></div>
             <div className='space-y-1'>
                 <p className='text-[#64748B] text-lg font-normal flex gap-2'><span className='text-[#244D3F] font-medium text-xl'>{time.typeOfCheckIn}</span> with {time.name}</p>

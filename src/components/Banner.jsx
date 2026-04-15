@@ -31,7 +31,7 @@ const Banner = () => {
         <div className='bg-[#F8FAFC] pt-20 pb-10'>
             <div className=' pb-10 flex flex-col gap-8 text-center '>
                 <div className='w-fit mx-auto flex flex-col gap-4'>
-                    <h1 className='text-[#1F2937] font-bold text-5xl px-2'>Friends to keep close in your life</h1>
+                    <h1 className='text-[#1F2937] font-bold text-3xl sm:text-5xl px-2'>Friends to keep close in your life</h1>
                     <p className='text-[#64748B] text-base font-normal md:w-xl mx-auto px-2'>Your personal shelf of meaningful connections. Browse, tend, and nurture the
                         relationships that matter most.</p>
                 </div>
@@ -43,7 +43,7 @@ const Banner = () => {
             </div>
 
             <div className=' w-fit mx-auto'>
-                <div className='grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3 items-stretch auto-rows-fr'>
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-3 items-stretch auto-rows-fr px-2'>
                     <SummaryCard paraText={"Total Friends"} headText={loading? <ClipLoader color="#244D3F" /> :total}></SummaryCard>
                     <SummaryCard paraText={"On Track"} headText={loading? <ClipLoader color="#244D3F" /> :onTrack}></SummaryCard>
                     <SummaryCard paraText={"Need Attention"} headText={loading? <ClipLoader color="#244D3F" /> :needAttention}></SummaryCard>

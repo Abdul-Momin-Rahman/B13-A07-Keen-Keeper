@@ -16,7 +16,7 @@ const ProfileCard = ({ friend }) => {
 
             <div className='flex flex-col gap-2'>
 
-                <h2 className='text-[#1F2937] font-semibold text-4xl sm:text-xl'>{name}</h2>
+                <h2 className='text-[#1F2937] font-semibold text-3xl sm:text-xl'>{name}</h2>
 
                 <p className='text-[#64748B] font-normal text-xl sm:text-xs'>{days_since_contact}d ago</p>
 

@@ -22,7 +22,7 @@ const Stats = () => {
             {
                 timeline.length > 0 ? <div className='bg-[#F8FAFC] py-20'>
 
-                    <div className='sm:max-w-8/12 px-10 sm:px-0 mx-auto  space-y-6'>
+                    <div className='sm:max-w-8/12 px-3 sm:px-0 mx-auto  space-y-6'>
                         <h1 className='text-[#1F2937] font-bold text-2xl sm:text-5xl text-center sm:text-left'>Friendship Analytics</h1>
                         <div className='p-8 bg-white rounded-2xl shadow-lg space-y-6 flex flex-col items-center'>
                             <p className='text-[#244D3F] font-medium text-xl w-full'>By Interaction Type</p>
@@ -64,7 +64,7 @@ const Stats = () => {
 
                     :
 
-                    <div className='bg-[#F8FAFC] text-5xl text-[#1F2937] font-bold text-center h-screen flex flex-col gap-5 items-center justify-center'>
+                    <div className='bg-[#F8FAFC] text-3xl sm:text-5xl text-[#1F2937] font-bold text-center h-screen flex flex-col gap-5 items-center justify-center'>
                         <FaRegSadCry /> Your Timeline is empty
                     </div>
             }
