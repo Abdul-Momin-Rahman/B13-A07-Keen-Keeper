@@ -64,7 +64,7 @@ const Stats = () => {
 
                     :
 
-                    <div className='bg-[#F8FAFC] text-3xl sm:text-5xl text-[#1F2937] font-bold text-center h-screen flex flex-col gap-5 items-center justify-center'>
+                    <div className='bg-[#F8FAFC] text-2xl sm:text-5xl text-[#1F2937] font-bold text-center h-152.5 flex flex-col gap-5 items-center justify-center'>
                         <FaRegSadCry /> Your Timeline is empty
                     </div>
             }
