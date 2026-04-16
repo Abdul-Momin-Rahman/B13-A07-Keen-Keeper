@@ -23,7 +23,8 @@ const Timeline = () => {
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
                     >
-                        <option value="" disabled={true} className='text-[#64748B]'>Filter timeline</option>
+                        <option value="" disabled={true} hidden={true} className='text-[#64748B]'>Filter timeline</option>
+                        <option value="" className='text-[#2d343d] font-bold'>All</option>
                         <option value="Call" className='text-[#64748B]'>Call</option>
                         <option value="Text" className='text-[#64748B]'>Text</option>
                         <option value="Video" className='text-[#64748B]'>Video</option>
