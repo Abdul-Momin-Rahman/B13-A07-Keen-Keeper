@@ -13,7 +13,7 @@ const Timeline = () => {
 
     const [search, setSearch] = useState('');
 
-    console.log(search)
+    // console.log(search)
     // console.log(timeline)
 
 
@@ -38,16 +38,16 @@ const Timeline = () => {
         data = timeline.filter(time => time.typeOfCheckIn === 'Video');
     }
 
-    console.log(data)
+    // console.log(data)
     let inputName = search.toLowerCase()
-    console.log(inputName)
+    // console.log(inputName)
     if (inputName) {
         data = data.filter(item => {
             return item.name.toLowerCase().startsWith(inputName)
         })
     }
 
-    console.log(data)
+    // console.log(data)
     if (sorting === "newest") {
         data = [...data].reverse();
     }
