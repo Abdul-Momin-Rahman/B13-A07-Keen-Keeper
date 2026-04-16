@@ -39,7 +39,7 @@ const Timeline = () => {
     }
 
     // console.log(data)
-    let inputName = search.toLowerCase()
+    let inputName = search.toLowerCase().trim()
     // console.log(inputName)
     if (inputName) {
         data = data.filter(item => {
