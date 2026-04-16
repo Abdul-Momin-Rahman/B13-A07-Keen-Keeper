@@ -9,6 +9,9 @@ const Timeline = () => {
 
     const [status, setStatus] = useState("");
 
+    const [sorting, setSorting] = useState('newest');
+    
+
     const callInteraction = timeline.filter(time => time.typeOfCheckIn === 'Call');
     const textInteraction = timeline.filter(time => time.typeOfCheckIn === 'Text');
     const videoInteraction = timeline.filter(time => time.typeOfCheckIn === 'Video');
@@ -18,7 +21,7 @@ const Timeline = () => {
             <div className=' sm:w-7/12 px-2 sm:px-0  mx-auto'>
                 <h1 className='text-[#1F2937] text-5xl font-bold text-center sm:text-left'>Timeline</h1>
 
-                <div className='py-6 '>
+                <div className='py-6 flex justify-start gap-6 items-center '>
                     <select className="select select-bordered bg-[#F8FAFC] text-black rounded-xl px-4  max-w-xs border border-gray-300 p-2   outline-0 focus:ring-2 focus:ring-gray-200"
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
@@ -30,6 +33,14 @@ const Timeline = () => {
                         <option value="Video" className='text-[#64748B]'>Video</option>
                     </select>
 
+                    <select className="select select-bordered bg-[#F8FAFC] text-black rounded-xl px-4  max-w-xs border border-gray-300 p-2   outline-0 focus:ring-2 focus:ring-gray-200"
+                        value={sorting}
+                        onChange={(e) => setSorting(e.target.value)}
+                    >
+                        <option value="newest" className='text-[#64748B]'>Newest</option>
+                        <option value="oldest" className='text-[#64748B]'>Oldest</option>
+                    </select>
+
                 </div>
 
                 <div className='space-y-6 min-h-40'>
@@ -39,24 +50,32 @@ const Timeline = () => {
                                 <FaRegSadCry /> Your Timeline is empty
                             </div> 
 
-                            : status === "" ?
-                                [...timeline].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                            : status === "" ? 
+                                sorting === 'newest' ? 
+                                    [...timeline].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                                        : timeline.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
 
-                                :status === "Call" ?
-                                    callInteraction.length === 0 ?
-                                        <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Calls.</h2> 
-                                            :[...callInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                            :status === "Call" ?
+                                callInteraction.length === 0 ?
+                                    <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Calls.</h2> 
+                                    : sorting === "newest" ?
+                                        [...callInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
+                                        : callInteraction.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
 
-                                :status === "Text" ? 
-                                    textInteraction.length === 0 ?
-                                        <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Texts</h2> 
-                                            :[...textInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                            :status === "Text" ? 
+                                textInteraction.length === 0 ?
+                                    <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Texts</h2> 
+                                    : sorting === 'newest'?
+                                        [...textInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>) 
+                                        : textInteraction.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
 
-                                :status === "Video" ?
-                                    videoInteraction.length === 0 ?
-                                        <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Video</h2>
-                                            : [...videoInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
-                                : null
+                            :status === "Video" ?
+                                videoInteraction.length === 0 ?
+                                    <h2 className='text-[#1F2937] text-2xl font-bold text-center h-40 flex flex-col gap-5 items-center justify-center'>You have no Video</h2>
+                                    : sorting === 'newest'?
+                                        [...videoInteraction].reverse().map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
+                                        : videoInteraction.map((time, index) => <TimelineCard time={time} key={index}></TimelineCard>)
+                            : null
 
                                        
                     }
